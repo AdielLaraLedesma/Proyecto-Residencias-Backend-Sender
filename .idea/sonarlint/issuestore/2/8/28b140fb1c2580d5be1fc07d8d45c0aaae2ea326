@@ -1,0 +1,40 @@
+
+K
+java:S5413P")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8ìçªÉ/
+U	java:S106]"9Replace this use of System.out or System.err by a logger.(…ÄÕˆ8ìçªÉ/
+K
+java:S5413P")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8ìçªÉ/
+R
+java:S18746"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8à³°É/
+O
+java:S1874)"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8£ ˜°É/
+R
+java:S18746"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8à³°É/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8‰¡í©È/
+Z	java:S106G"9Replace this use of System.out or System.err by a logger.(Ø°ï®ùÿÿÿÿ8ìçªÉ/
+]	java:S1258"<This block of commented-out lines of code should be removed.(äØ¶ÿÿÿÿÿ8à³°É/
+r	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‰ÿœüÿÿÿÿ8ìçªÉ/
+O
+java:S1874%"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8Õå’°É/
+M
+java:S18745"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8à³°É/
+M
+java:S18745"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8à³°É/
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(øêÓ¿ÿÿÿÿÿ8ìçªÉ/
+Z	java:S106H"9Replace this use of System.out or System.err by a logger.(²·¦¨úÿÿÿÿ8ìçªÉ/
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ÒÁ·Œ8¦Ó…°É/
+T
+java:S1874!"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8—Èœ°É/
+O
+java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8²›°É/
+O
+java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8²›°É/
+O
+java:S1874)"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8£ ˜°É/
+O
+java:S1874%"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8Õå’°É/
+T
+java:S1874!"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8—Èœ°É/
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(êÉª›şÿÿÿÿ8ìçªÉ/
