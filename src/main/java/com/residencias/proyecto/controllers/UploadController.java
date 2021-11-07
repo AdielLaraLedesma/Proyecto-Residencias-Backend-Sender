@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,15 +17,21 @@ public class UploadController {
 
 
     @PostMapping("/Prueba")
-    public String prueba() {
+    public String prueba(@RequestParam boolean revisarAsistencia) {
+
+        System.out.println(revisarAsistencia);
         return "Prueba";
     }
 
 
-    @PostMapping("/upload-csv-file")
-    public Reunion tomarAsistencia(@RequestBody Reunion reunion, Model model) {
-        return asistenciaService.tomarAsistencia(reunion);
-        //return reunion;
+    @PostMapping("/revisarAsistencia")
+    public Reunion tomarAsistencia(@RequestBody Reunion reunion, @RequestParam boolean revisarAsistencia) {
+        return asistenciaService.tomarAsistencia(reunion, revisarAsistencia);
+    }
+
+    @PostMapping("/confirmarAsistencia")
+    public Reunion tomarAsistencia(@RequestBody Reunion reunion) {
+        return asistenciaService.confirmarAsistencia(reunion);
     }
 
 

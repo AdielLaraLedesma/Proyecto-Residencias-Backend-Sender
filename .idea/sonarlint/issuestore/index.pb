@@ -13,3 +13,9 @@ x
 Hsrc/main/java/com/residencias/proyecto/controllers/UploadController.java,6\d\6dab774cf65807f4791b23d15a50744dde6ae766
 v
 Fsrc/main/java/com/residencias/proyecto/services/AsistenciaService.java,2\8\28b140fb1c2580d5be1fc07d8d45c0aaae2ea326
+o
+?src/main/java/com/residencias/proyecto/utils/AppProperties.java,6\0\60aeb97c5feeba63b6fd3664680dceae02d54edb
+m
+=src/main/java/com/residencias/proyecto/dto/ReunionStatus.java,9\4\94ee1eb2cde82cfdbb86a6016db30cdec00ae69c
+{
+Ksrc/main/java/com/residencias/proyecto/rabbitmq/config/MessagingConfig.java,1\e\1e4a329208a45c3395e632cb1160999f660c1d4b

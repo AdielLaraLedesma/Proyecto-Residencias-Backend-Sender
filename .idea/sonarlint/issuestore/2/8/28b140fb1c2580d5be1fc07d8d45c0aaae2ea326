@@ -1,40 +1,65 @@
 
-K
-java:S5413P")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8ìçªÉ/
-U	java:S106]"9Replace this use of System.out or System.err by a logger.(…ÄÕˆ8ìçªÉ/
-K
-java:S5413P")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8ìçªÉ/
+P
+java:S1874‡"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8‘¬÷ëÍ/
+O
+java:S1874H"2Remove this use of "getSeconds"; it is deprecated.(³Şó‡8‘¬÷ëÍ/
 R
-java:S18746"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8à³°É/
+java:S1874`"0Remove this use of "getHours"; it is deprecated.(¯½±ıøÿÿÿÿ8äÌöëÍ/
+t
+java:S3776s"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¹Í”ßùÿÿÿÿ8‘¬÷ëÍ/
+M
+java:S1874?"0Remove this use of "getHours"; it is deprecated.(ó‘¯8‘¬÷ëÍ/
+M
+java:S1874="0Remove this use of "getHours"; it is deprecated.(î²’å8‘¬÷ëÍ/
 O
-java:S1874)"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8£ ˜°É/
+java:S1874{"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8‘¬÷ëÍ/
+Q
+java:S1128"4Remove this unused import 'javax.servlet.http.Part'.(ó•™¬8¯úéëÍ/
+s	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‰ÿœüÿÿÿÿ8‘¬÷ëÍ/
+P
+java:S1874ƒ"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8‘¬÷ëÍ/
+M
+java:S1874="0Remove this use of "getHours"; it is deprecated.(î²’å8‘¬÷ëÍ/
+T
+java:S1874B"2Remove this use of "getMinutes"; it is deprecated.(Ì¼Â¤ûÿÿÿÿ8‘¬÷ëÍ/
+L
+java:S5413¢")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8‘¬÷ëÍ/
+S
+java:S1874"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8‘¬÷ëÍ/
+M
+java:S1874?"0Remove this use of "getHours"; it is deprecated.(ó‘¯8‘¬÷ëÍ/
+N
+java:S1874"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8äÌöëÍ/
 R
-java:S18746"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8à³°É/
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8‰¡í©È/
-Z	java:S106G"9Replace this use of System.out or System.err by a logger.(Ø°ï®ùÿÿÿÿ8ìçªÉ/
-]	java:S1258"<This block of commented-out lines of code should be removed.(äØ¶ÿÿÿÿÿ8à³°É/
-r	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ‰ÿœüÿÿÿÿ8ìçªÉ/
-O
-java:S1874%"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8Õå’°É/
-M
-java:S18745"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8à³°É/
-M
-java:S18745"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8à³°É/
-Z	java:S106R"9Replace this use of System.out or System.err by a logger.(øêÓ¿ÿÿÿÿÿ8ìçªÉ/
-Z	java:S106H"9Replace this use of System.out or System.err by a logger.(²·¦¨úÿÿÿÿ8ìçªÉ/
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(ÒÁ·Œ8¦Ó…°É/
+java:S1874Z"0Remove this use of "getHours"; it is deprecated.(Öè¤óıÿÿÿÿ8äÌöëÍ/
+L
+java:S5413¢")Verify that "remove()" is used correctly.(”™áêüÿÿÿÿ8‘¬÷ëÍ/
 T
-java:S1874!"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8—Èœ°É/
-O
-java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8²›°É/
-O
-java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8²›°É/
-O
-java:S1874)"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8£ ˜°É/
-O
-java:S1874%"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8Õå’°É/
+java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8‘¬÷ëÍ/
+N
+java:S1874"0Remove this use of "getHours"; it is deprecated.(Õÿˆô8äÌöëÍ/
 T
-java:S1874!"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8—Èœ°É/
-Z	java:S106I"9Replace this use of System.out or System.err by a logger.(êÉª›şÿÿÿÿ8ìçªÉ/
+java:S1874B"2Remove this use of "getMinutes"; it is deprecated.(Ì¼Â¤ûÿÿÿÿ8‘¬÷ëÍ/
+V	java:S106®"9Replace this use of System.out or System.err by a logger.(…ÄÕˆ8‘¬÷ëÍ/
+T
+java:S1874E"2Remove this use of "getMinutes"; it is deprecated.(ÊúÈÁşÿÿÿÿ8‘¬÷ëÍ/
+T
+java:S1874a"2Remove this use of "getMinutes"; it is deprecated.(–ß‡Üúÿÿÿÿ8‘¬÷ëÍ/
+O
+java:S1874{"2Remove this use of "getSeconds"; it is deprecated.(Š¤âã8‘¬÷ëÍ/
+T
+java:S1874"2Remove this use of "getSeconds"; it is deprecated.(Û‰Î¹ÿÿÿÿÿ8‘¬÷ëÍ/
+]	java:S125'"<This block of commented-out lines of code should be removed.(Õ©âÁûÿÿÿÿ8‘¬÷ëÍ/
+P
+java:S1874‡"2Remove this use of "getMinutes"; it is deprecated.(¥Î¶š8‘¬÷ëÍ/
+S
+java:S1874"0Remove this use of "getHours"; it is deprecated.(Ó°éñÿÿÿÿÿ8‘¬÷ëÍ/
+T
+java:S1874["2Remove this use of "getMinutes"; it is deprecated.(’ç€†ûÿÿÿÿ8‘¬÷ëÍ/
+P
+java:S1874ƒ"2Remove this use of "getMinutes"; it is deprecated.(¡ƒ‚·8‘¬÷ëÍ/
+]	java:S125K"<This block of commented-out lines of code should be removed.(›Ó¼·üÿÿÿÿ8‘¬÷ëÍ/
+T
+java:S1874E"2Remove this use of "getMinutes"; it is deprecated.(ÊúÈÁşÿÿÿÿ8‘¬÷ëÍ/
+O
+java:S1874H"2Remove this use of "getSeconds"; it is deprecated.(³Şó‡8‘¬÷ëÍ/
