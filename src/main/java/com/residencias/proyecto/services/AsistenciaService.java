@@ -46,6 +46,11 @@ public class AsistenciaService {
         return null;
     }
 
+    public List<Reunion> obtenerLista(){
+        return null;
+    }
+
+
     private List<Participante> validarTiempoMinimo(List<Participante> participantes) {
         int tiempoMinimo = Integer.parseInt(AppProperties.getProperty("tiempo.minimo"));
         int horasMinimas =0;
@@ -75,7 +80,7 @@ public class AsistenciaService {
                 //segundosParticipante = participantes.get(i).getHoraSalida().getSeconds() + 60 - participantes.get(i).getHoraUnion().getSeconds();
             }
 
-            boolean validaParticipacion = horasParticipante < horasMinimas && minutosParticipante < minutosMinimo;
+            boolean validaParticipacion = horasParticipante >= horasMinimas && minutosParticipante >= minutosMinimo;
             participantes.get(i).setParticipaciónValida(validaParticipacion);
 
 
@@ -101,10 +106,10 @@ public class AsistenciaService {
             int minutosDeTolerancia = minutosInicio + minutosTolerancia;
             if (minutosDeTolerancia >= 60){
                 horasDeTolerancia = horasDeTolerancia + 1;
-                minutosDeTolerancia = minutosTolerancia - 60;
+                minutosDeTolerancia = minutosDeTolerancia - 60;
             }
 
-            boolean validaParticipacion = horaInicioParticipante <= horasDeTolerancia && minutoInicioParticipante <= minutosDeTolerancia;
+            boolean validaParticipacion = horaInicioParticipante < horasDeTolerancia || (horaInicioParticipante == horasDeTolerancia && minutoInicioParticipante <= minutosDeTolerancia);
             participantes.get(i).setParticipaciónValida(validaParticipacion);
 
         }
@@ -121,26 +126,41 @@ public class AsistenciaService {
 
 
                     int segundosRecavadosParticipanteUno = participanteUno.getHoraSalida().getSeconds() - participanteUno.getHoraUnion().getSeconds();
-                    if(segundosRecavadosParticipanteUno < 0)
+                    int minutosRecavadosParticipanteUno = participanteUno.getHoraSalida().getMinutes() - participanteUno.getHoraUnion().getMinutes();
+                    if(segundosRecavadosParticipanteUno < 0){
                         segundosRecavadosParticipanteUno = segundosRecavadosParticipanteUno + 60;
+                        minutosRecavadosParticipanteUno -= 1;
+                    }
+
 
                     int segundosRecavadosParticipanteDos = participanteDos.getHoraSalida().getSeconds() - participanteDos.getHoraUnion().getSeconds();
-                    if(segundosRecavadosParticipanteDos < 0)
-                        segundosRecavadosParticipanteDos = segundosRecavadosParticipanteDos + 60;
-
-                    int minutosRecavadosParticipanteUno = participanteUno.getHoraSalida().getMinutes() - participanteUno.getHoraUnion().getMinutes();
-                    if(minutosRecavadosParticipanteUno < 0)
-                        minutosRecavadosParticipanteUno = minutosRecavadosParticipanteUno + 60;
-
                     int minutosRecavadosParticipanteDos = participanteDos.getHoraSalida().getMinutes() - participanteDos.getHoraUnion().getMinutes();
-                    if(minutosRecavadosParticipanteDos < 0)
+                    if(segundosRecavadosParticipanteDos < 0){
+                        segundosRecavadosParticipanteDos = segundosRecavadosParticipanteDos + 60;
+                        minutosRecavadosParticipanteDos -= 1;
+                    }
+
+                    int horasRecavadasParticipanteUno = participanteUno.getHoraSalida().getHours() - participanteUno.getHoraUnion().getHours();
+                    int horasRecavadasParticipanteDos = participanteDos.getHoraSalida().getHours() - participanteDos.getHoraUnion().getHours();
+
+
+                    if(minutosRecavadosParticipanteUno < 0){
+                        minutosRecavadosParticipanteUno = minutosRecavadosParticipanteUno + 60;
+                        horasRecavadasParticipanteUno -= 1;
+                    }
+
+
+
+                    if(minutosRecavadosParticipanteDos < 0){
                         minutosRecavadosParticipanteDos = minutosRecavadosParticipanteDos + 60;
+                        horasRecavadasParticipanteDos -= 1;
+                    }
 
 
                     int nuevosSegundosParticipante = segundosRecavadosParticipanteUno + segundosRecavadosParticipanteDos;
                     int nuevosMinutosParticpante = minutosRecavadosParticipanteUno + minutosRecavadosParticipanteDos;
-                    int nuevasHorasParticipante =   (participanteUno.getHoraSalida().getHours() - participanteUno.getHoraUnion().getHours()) +
-                            (participanteDos.getHoraSalida().getHours() - participanteDos.getHoraUnion().getHours());
+                    int nuevasHorasParticipante =   horasRecavadasParticipanteUno + horasRecavadasParticipanteDos;
+
 
                     if(nuevosSegundosParticipante >= 60){
                         nuevosMinutosParticpante++;

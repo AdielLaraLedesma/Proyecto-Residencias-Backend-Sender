@@ -1,13 +1,12 @@
 package com.residencias.proyecto.controllers;
 
 import com.residencias.proyecto.dto.Reunion;
+import com.residencias.proyecto.dto.dtoPrueba;
 import com.residencias.proyecto.services.AsistenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class UploadController {
@@ -16,11 +15,11 @@ public class UploadController {
     private AsistenciaService asistenciaService;
 
 
-    @PostMapping("/Prueba")
-    public String prueba(@RequestParam boolean revisarAsistencia) {
+    @PostMapping(value = "/Prueba", produces = "application/json", consumes = "application/json")
+    public dtoPrueba prueba(@RequestBody dtoPrueba reunion) {
 
-        System.out.println(revisarAsistencia);
-        return "Prueba";
+        System.out.println(reunion);
+        return reunion;
     }
 
 
@@ -32,6 +31,11 @@ public class UploadController {
     @PostMapping("/confirmarAsistencia")
     public Reunion tomarAsistencia(@RequestBody Reunion reunion) {
         return asistenciaService.confirmarAsistencia(reunion);
+    }
+
+    @PostMapping("/obtener-reuniones")
+    public List<Reunion> obtenerReuniones(){
+        return null;
     }
 
 
