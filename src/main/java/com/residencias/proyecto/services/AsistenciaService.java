@@ -4,9 +4,11 @@ import com.residencias.proyecto.dto.Participante;
 import com.residencias.proyecto.dto.Reunion;
 import com.residencias.proyecto.dto.ReunionStatus;
 import com.residencias.proyecto.rabbitmq.config.MessagingConfig;
+import com.residencias.proyecto.repository.ReunionRepository;
 import com.residencias.proyecto.utils.AppProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Part;
@@ -20,7 +22,10 @@ public class AsistenciaService {
     @Autowired
     private RabbitTemplate template;
 
-    public Reunion tomarAsistencia(Reunion reunion, boolean revisarAsistencia){
+    @Autowired
+    private ReunionRepository reunionRepository;
+
+    public ResponseEntity<Reunion> tomarAsistencia(Reunion reunion, boolean revisarAsistencia){
 
         reunion.setParticipantes(eliminarRepetidos(reunion.getParticipantes()));
 
@@ -32,22 +37,26 @@ public class AsistenciaService {
 
 
         //Si el usuario desea revisar la asistencia antes de confirmar
-        if (revisarAsistencia)  return reunion;
+        if (revisarAsistencia)  return ResponseEntity.ok(reunion);
 
         return confirmarAsistencia(reunion);
 
         //return reunion;
     }
 
-    public Reunion confirmarAsistencia(Reunion reunion) {
+    public ResponseEntity<Reunion> confirmarAsistencia(Reunion reunion) {
         //Logica para enviar la participación a la cola
         ReunionStatus reunionStatus = new ReunionStatus(reunion, "PROCESS", "order placed successfully");
         template.convertAndSend(MessagingConfig.EXCHANGE, MessagingConfig.ROUTING_KEY, reunionStatus);
-        return null;
+        return ResponseEntity.ok().build();
     }
 
-    public List<Reunion> obtenerLista(){
-        return null;
+    public List<Reunion> obtenerReuniones(){
+        return reunionRepository.findAll();
+    }
+
+    public ResponseEntity<Reunion> obtenerReunion(Integer idReunion){
+        return ResponseEntity.ok(reunionRepository.findById(idReunion).orElse(null));
     }
 
 
@@ -80,8 +89,8 @@ public class AsistenciaService {
                 //segundosParticipante = participantes.get(i).getHoraSalida().getSeconds() + 60 - participantes.get(i).getHoraUnion().getSeconds();
             }
 
-            boolean validaParticipacion = horasParticipante >= horasMinimas && minutosParticipante >= minutosMinimo;
-            participantes.get(i).setParticipaciónValida(validaParticipacion);
+            boolean validaParticipacion = horasParticipante > horasMinimas || horasParticipante == horasMinimas && minutosParticipante >= minutosMinimo;
+            participantes.get(i).setAsistencia(validaParticipacion);
 
 
         }
@@ -110,7 +119,7 @@ public class AsistenciaService {
             }
 
             boolean validaParticipacion = horaInicioParticipante < horasDeTolerancia || (horaInicioParticipante == horasDeTolerancia && minutoInicioParticipante <= minutosDeTolerancia);
-            participantes.get(i).setParticipaciónValida(validaParticipacion);
+            participantes.get(i).setAsistencia(validaParticipacion);
 
         }
         return participantes;
